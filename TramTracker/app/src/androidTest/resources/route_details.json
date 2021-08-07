@@ -1,0 +1,76 @@
+{
+  "errorMessage": null,
+  "hasError": false,
+  "hasResponse": true,
+  "responseObject": [
+    {
+      "__type": "NextPredictedRoutesCollectionInfo",
+      "AirConditioned": false,
+      "Destination": "Balaclava",
+      "DisplayAC": false,
+      "DisruptionMessage": {
+        "DisplayType": "Text",
+        "MessageCount": 0,
+        "Messages": []
+      },
+      "HasDisruption": false,
+      "HasSpecialEvent": false,
+      "HeadBoardRouteNo": "78",
+      "InternalRouteNo": 78,
+      "IsLowFloorTram": false,
+      "IsTTAvailable": true,
+      "PredictedArrivalDateTime": "/Date(1628238468000+1000)/",
+      "RouteNo": "78",
+      "SpecialEventMessage": "",
+      "TripID": 0,
+      "VehicleNo": 288
+    },
+    {
+      "__type": "NextPredictedRoutesCollectionInfo",
+      "AirConditioned": false,
+      "Destination": "Balaclava",
+      "DisplayAC": false,
+      "DisruptionMessage": {
+        "DisplayType": "Text",
+        "MessageCount": 0,
+        "Messages": []
+      },
+      "HasDisruption": false,
+      "HasSpecialEvent": false,
+      "HeadBoardRouteNo": "78",
+      "InternalRouteNo": 78,
+      "IsLowFloorTram": false,
+      "IsTTAvailable": true,
+      "PredictedArrivalDateTime": "/Date(1628239080000+1000)/",
+      "RouteNo": "78",
+      "SpecialEventMessage": "",
+      "TripID": 0,
+      "VehicleNo": 271
+    },
+    {
+      "__type": "NextPredictedRoutesCollectionInfo",
+      "AirConditioned": false,
+      "Destination": "Balaclava",
+      "DisplayAC": false,
+      "DisruptionMessage": {
+        "DisplayType": "Text",
+        "MessageCount": 0,
+        "Messages": []
+      },
+      "HasDisruption": false,
+      "HasSpecialEvent": false,
+      "HeadBoardRouteNo": "78",
+      "InternalRouteNo": 78,
+      "IsLowFloorTram": false,
+      "IsTTAvailable": true,
+      "PredictedArrivalDateTime": "/Date(1628239860000+1000)/",
+      "RouteNo": "78",
+      "SpecialEventMessage": "",
+      "TripID": 0,
+      "VehicleNo": 269
+    }
+  ],
+  "timeRequested": "/Date(1628238415918+1000)/",
+  "timeResponded": "/Date(1628238415965+1000)/",
+  "webMethodCalled": "GetNextPredictedRoutesCollection"
+}

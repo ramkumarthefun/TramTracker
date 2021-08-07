@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TramTracker</string>
+    <string name="clear"><b>Clear</b></string>
+    <string name="load"><b>Load</b></string>
+    <string name="routeDetailsFail">Failed to load Route Details</string>
+    <string name="tram_tracker">Please click Load Button to see North and South Bound Tram arrival timings</string>
+    <string name="north">North</string>
+</resources>

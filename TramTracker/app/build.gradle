@@ -1,0 +1,124 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.example.tramtracker"
+        minSdkVersion 24
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "com.example.tramtracker.MainTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    //Testing
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation "com.google.truth:truth:1.0.1"
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.2.1"
+
+    //mock
+    testImplementation 'org.mockito:mockito-inline:2.21.0'
+    testImplementation('com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0') {
+        exclude group: 'org.jetbrains.kotlin'
+        exclude group: 'org.mockito'
+    }
+    androidTestImplementation 'org.mockito:mockito-android:3.10.0'
+    androidTestImplementation('com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0') {
+        exclude group: 'org.jetbrains.kotlin'
+        exclude group: 'org.mockito'
+    }
+
+    //espresso
+    def espresso_version = "3.4.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso_version"
+    androidTestImplementation 'androidx.test:rules:1.4.0'
+
+    //Hilt DI
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // For local unit tests
+    kaptTest "com.google.dagger:hilt-android-compiler:$hilt_version"
+    testImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+
+    // For instrumentation tests
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    //Hilt ViewModel
+    def hilt_viewmodel_version = "1.0.0-alpha02"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_viewmodel_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_viewmodel_version"
+
+    //Retrofit API
+    def retrofit_version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+
+    //Moshi Json
+    def moshi_version = "1.11.0"
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+
+    //LiveData & ViewModel
+    def lifecycle_version = "2.2.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
+
+    //okhttp
+    def okhttp3_version = "4.9.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okhttp3_version"
+}
+
+kapt {
+    correctErrorTypes true
+}

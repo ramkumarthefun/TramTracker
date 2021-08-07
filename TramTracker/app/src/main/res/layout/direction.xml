@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/direction"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/tracker_8dp"
+    android:background="@drawable/direction_bg"
+    android:paddingStart="@dimen/tracker_8dp"
+    android:text="@string/north"
+    android:textColor="@color/black"
+    android:textSize="@dimen/tracker_text_size"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
