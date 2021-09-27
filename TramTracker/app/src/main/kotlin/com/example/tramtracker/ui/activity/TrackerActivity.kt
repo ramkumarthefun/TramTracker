@@ -35,7 +35,7 @@ class TrackerActivity : AppCompatActivity() {
         binding.load.setOnClickListener {
             binding.tramTrackerRecyclerView.visibility = VISIBLE
             binding.progressCircular.visibility = VISIBLE
-            viewModel.getRouteDetails(Dispatchers.IO)
+            viewModel.getRouteDetails(Dispatchers.IO, true)
         }
 
         //recycler view and progressbar is hidden when load button is clicked
@@ -55,7 +55,7 @@ class TrackerActivity : AppCompatActivity() {
             }
         })
 
-        viewModel.getRouteDetails(Dispatchers.IO)
+        viewModel.getRouteDetails(Dispatchers.IO, false)
     }
 
     private fun initRecyclerView() {
